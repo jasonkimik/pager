@@ -45,6 +45,18 @@ public class MainActivity extends AppCompatActivity {
             RelativeLayout layout = (RelativeLayout)findViewById(R.id.activity_main);
             ScrollView scrollView = (ScrollView)findViewById(R.id.scroller);
 
+            Button home = new Button(this);
+            home.setText("HOME");
+
+            home.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent tent = new Intent(MainActivity.this, home.class);
+                    startActivity(tent);
+                }
+            });
+
+
 
 
             while(buffread.readLine() != null){
@@ -53,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 final String[] splitter = temp.split(" ");
 
                 Button button = new Button(this);
-                button.setId(Integer.parseInt(splitter[1]));
+                //button.setId(Integer.parseInt(splitter[1]));
 
                 button.setText(splitter[0] + " "+ splitter[1]);
 
@@ -77,12 +89,13 @@ public class MainActivity extends AppCompatActivity {
                                           });
 
                         layout.addView(button);
-                        scrollView.addView(layout);
+
 
 
 
 
             }
+            scrollView.addView(layout);
 
 
         } catch (FileNotFoundException e) {
