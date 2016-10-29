@@ -164,7 +164,7 @@ public class page extends AppCompatActivity
         {
             public void onClick(View v)
             {
-                Intent intent = new Intent(page.this, done.class);
+                Intent intent = new Intent(page.this, compose.class);
                 intent.putExtra("num", tv.getText());
                 startActivity(intent);
             }

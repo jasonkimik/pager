@@ -26,8 +26,9 @@ public class done extends AppCompatActivity
 
         input.setText(num);
 
+    }
 
-
-
+    public CharSequence text(){
+        return input.getText();
     }
 }
